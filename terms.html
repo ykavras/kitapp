@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Terms of Service · KIT</title>
+<meta name="description" content="The terms for using KIT — a private, local-first notebook that runs entirely on your device.">
+<style>
+  :root {
+    --ground: #0b0c0e;
+    --surface: #16181c;
+    --surface-2: #1e2126;
+    --ink: #ece9e2;
+    --ink-muted: #9ba0a8;
+    --ink-faint: #676c74;
+    --sage: #8fae96;
+    --sage-bright: #a7c4ad;
+    --sage-soft: rgba(143, 174, 150, 0.12);
+    --border: rgba(255, 255, 255, 0.08);
+    --border-strong: rgba(255, 255, 255, 0.14);
+    --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    background: var(--ground);
+    color: var(--ink-muted);
+    font-family: var(--sans);
+    line-height: 1.62;
+    font-size: 16.5px;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  .wrap { max-width: 680px; margin: 0 auto; padding: 0 24px; }
+
+  a { color: var(--sage); text-decoration: none; }
+  a:hover { color: var(--sage-bright); text-decoration: underline; }
+
+  /* ---- top bar ---- */
+  header.site {
+    border-bottom: 1px solid var(--border);
+    position: sticky; top: 0;
+    background: rgba(11, 12, 14, 0.82);
+    backdrop-filter: saturate(140%) blur(14px);
+    -webkit-backdrop-filter: saturate(140%) blur(14px);
+    z-index: 10;
+  }
+  header.site .wrap {
+    display: flex; align-items: center; justify-content: space-between;
+    height: 60px;
+  }
+  .brand { display: flex; align-items: center; gap: 10px; color: var(--ink); }
+  .brand .emblem { width: 26px; height: 16px; color: var(--sage); flex-shrink: 0; }
+  .brand .k { font-family: var(--serif); font-weight: 500; font-size: 22px; letter-spacing: 0.18em; }
+  nav.doc-nav { display: flex; gap: 20px; font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase; }
+  nav.doc-nav a { color: var(--ink-faint); }
+  nav.doc-nav a.active { color: var(--ink); }
+  nav.doc-nav a:hover { color: var(--sage); text-decoration: none; }
+
+  /* ---- hero ---- */
+  .hero { padding: 76px 0 8px; }
+  .eyebrow {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--sage); margin-bottom: 20px;
+  }
+  h1 {
+    font-family: var(--serif); font-weight: 500; color: var(--ink);
+    font-size: clamp(38px, 7vw, 56px); line-height: 1.05; letter-spacing: -0.01em;
+  }
+  .meta {
+    margin-top: 22px; display: flex; flex-wrap: wrap; gap: 8px 10px;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--ink-faint);
+  }
+  .meta span { border: 1px solid var(--border); border-radius: 999px; padding: 6px 12px; }
+
+  /* ---- summary callout ---- */
+  .summary {
+    margin: 44px 0 8px; padding: 28px 26px;
+    background: var(--sage-soft); border: 1px solid rgba(143,174,150,0.24);
+    border-radius: 18px;
+  }
+  .summary .lbl {
+    font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--sage-bright); margin-bottom: 12px;
+  }
+  .summary p { color: var(--ink); font-size: 17px; }
+  .summary p + p { margin-top: 12px; }
+
+  /* ---- table of contents ---- */
+  .toc { margin: 40px 0 8px; border-top: 1px solid var(--border); padding-top: 26px; }
+  .toc .lbl {
+    font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--ink-faint); margin-bottom: 16px;
+  }
+  .toc ol { list-style: none; counter-reset: toc; columns: 2; column-gap: 34px; }
+  @media (max-width: 560px) { .toc ol { columns: 1; } }
+  .toc li { counter-increment: toc; margin-bottom: 9px; break-inside: avoid; }
+  .toc a { color: var(--ink-muted); font-size: 15px; }
+  .toc a::before { content: counter(toc, decimal-leading-zero); font-family: var(--mono); font-size: 11px; color: var(--sage); margin-right: 10px; }
+  .toc a:hover { color: var(--sage); text-decoration: none; }
+
+  /* ---- sections ---- */
+  section.body-sec { padding: 46px 0 0; }
+  section.body-sec:first-of-type { padding-top: 54px; }
+  .num { font-family: var(--mono); font-size: 12px; letter-spacing: 0.1em; color: var(--sage); display: block; margin-bottom: 10px; }
+  h2 {
+    font-family: var(--serif); font-weight: 500; color: var(--ink);
+    font-size: clamp(24px, 4vw, 30px); line-height: 1.15; letter-spacing: -0.01em;
+    margin-bottom: 18px; scroll-margin-top: 80px;
+  }
+  section.body-sec p { margin-bottom: 15px; }
+  section.body-sec p strong, .ink { color: var(--ink); font-weight: 600; }
+
+  ul.clean { list-style: none; margin: 4px 0 15px; }
+  ul.clean li { position: relative; padding-left: 22px; margin-bottom: 11px; }
+  ul.clean li::before {
+    content: ""; position: absolute; left: 2px; top: 11px;
+    width: 6px; height: 6px; border-radius: 2px; background: var(--sage);
+  }
+  ul.clean li strong { color: var(--ink); font-weight: 600; }
+
+  /* ---- contact card ---- */
+  .contact-card {
+    margin: 12px 0 4px; padding: 24px 26px; border: 1px solid var(--border-strong);
+    border-radius: 18px; background: var(--surface);
+  }
+  .contact-card .who { color: var(--ink); font-weight: 600; font-size: 16px; }
+  .contact-card .mail { margin-top: 4px; font-size: 17px; }
+
+  /* ---- footer ---- */
+  footer.site { margin-top: 80px; border-top: 1px solid var(--border); padding: 40px 0 72px; }
+  footer.site .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; }
+  footer.site .cr { font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; color: var(--ink-faint); text-transform: uppercase; }
+  footer.site nav { display: flex; gap: 20px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; }
+  footer.site nav a { color: var(--ink-faint); }
+  footer.site nav a:hover { color: var(--sage); text-decoration: none; }
+
+  /* ---- print: switch to clean light for saving as PDF ---- */
+  @media print {
+    header.site, footer.site nav, .toc { display: none; }
+    body { background: #fff; color: #222; }
+    h1, h2, .brand .k, .summary p, section.body-sec p strong, .contact-card .who { color: #111; }
+    .summary { background: #f4f7f4; border-color: #cddccf; }
+    .contact-card { border-color: #ddd; }
+    a { color: #2f6f4f; }
+    .num, .eyebrow, .summary .lbl { color: #4b7a58; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <div class="brand">
+      <svg class="emblem" viewBox="0 0 40 24" aria-hidden="true">
+        <path d="M20 12 C20 3.5 32 3.5 32 12 C32 20.5 20 20.5 20 12 C20 3.5 8 3.5 8 12 C8 20.5 20 20.5 20 12 Z"
+              fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+      </svg>
+      <span class="k">KIT</span>
+    </div>
+    <nav class="doc-nav">
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html" class="active">Terms</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="hero">
+    <p class="eyebrow">KIT · Terms</p>
+    <h1>Terms of Service</h1>
+    <div class="meta">
+      <span>Effective July 15, 2026</span>
+      <span>Version 1.0</span>
+    </div>
+  </div>
+
+  <div class="summary">
+    <p class="lbl">The agreement, briefly</p>
+    <p>KIT is a private notebook that runs entirely on your device. You own everything you put in it, and you're responsible for keeping your own backups — because your data lives only on your phone, we can't recover it for you.</p>
+    <p>KIT is provided as-is, for your personal use. By using KIT, you agree to the terms below.</p>
+  </div>
+
+  <nav class="toc" aria-label="Contents">
+    <p class="lbl">Contents</p>
+    <ol>
+      <li><a href="#acceptance">Accepting these terms</a></li>
+      <li><a href="#licence">Your licence to use KIT</a></li>
+      <li><a href="#content">Your content is yours</a></li>
+      <li><a href="#backups">Backups are your responsibility</a></li>
+      <li><a href="#use">Acceptable use</a></li>
+      <li><a href="#updates">Availability &amp; updates</a></li>
+      <li><a href="#warranty">No warranty</a></li>
+      <li><a href="#liability">Limitation of liability</a></li>
+      <li><a href="#ip">Intellectual property</a></li>
+      <li><a href="#appstore">App Store terms</a></li>
+      <li><a href="#changes">Changes to these terms</a></li>
+      <li><a href="#law">Governing law</a></li>
+      <li><a href="#contact">Contact us</a></li>
+    </ol>
+  </nav>
+
+  <section class="body-sec" id="acceptance">
+    <span class="num">01</span>
+    <h2>Accepting these terms</h2>
+    <p>These Terms of Service (“Terms”) are an agreement between you and <strong>Albert Software</strong> (“we”, “us”, “our”) governing your use of the KIT app (“KIT”, “the App”). By downloading, installing, or using KIT, you agree to these Terms. If you do not agree, please do not use the App.</p>
+  </section>
+
+  <section class="body-sec" id="licence">
+    <span class="num">02</span>
+    <h2>Your licence to use KIT</h2>
+    <p>We grant you a personal, worldwide, non-exclusive, non-transferable, revocable licence to install and use KIT on devices you own or control, for your own personal, non-commercial use, in accordance with these Terms and the rules of the App Store.</p>
+    <p>You may not copy, modify, reverse-engineer, decompile, resell, sublicense, or distribute the App, except where such a restriction is prohibited by law.</p>
+  </section>
+
+  <section class="body-sec" id="content">
+    <span class="num">03</span>
+    <h2>Your content is yours</h2>
+    <p>Everything you create in KIT — your people, notes, reminders, voice memos, photos, and links — belongs to you. We claim no ownership of, and no rights in, your content.</p>
+    <p>Because KIT stores your content only on your device and never transmits it to us, we have no access to it and never see it.</p>
+  </section>
+
+  <section class="body-sec" id="backups">
+    <span class="num">04</span>
+    <h2>Backups are your responsibility</h2>
+    <p>KIT does not store your data on any server and does not back it up for you. <strong>You are solely responsible for maintaining your own backups</strong> of anything important to you.</p>
+    <p>We cannot recover, restore, or retrieve your data if it is lost — for example if your device is lost, damaged, or reset, or if you delete the App or its data — because we never hold a copy. Please keep your own backups.</p>
+  </section>
+
+  <section class="body-sec" id="use">
+    <span class="num">05</span>
+    <h2>Acceptable use</h2>
+    <p>KIT is a tool for your personal memory. You agree to use it lawfully, and you are solely responsible for the content you store in it and for how you use that content — including respecting the privacy and rights of the people you record information about. You agree not to use the App for any unlawful purpose, or in any way that could damage or impair it.</p>
+  </section>
+
+  <section class="body-sec" id="updates">
+    <span class="num">06</span>
+    <h2>Availability and updates</h2>
+    <p>We may update KIT from time to time to add features, fix problems, or keep it compatible with new devices and operating systems. We may also change, suspend, or stop offering the App. We are not obligated to provide updates or support, and any release may add, change, or remove features.</p>
+  </section>
+
+  <section class="body-sec" id="warranty">
+    <span class="num">07</span>
+    <h2>No warranty</h2>
+    <p>KIT is provided “as is” and “as available,” without warranties of any kind, whether express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, and non-infringement. We do not warrant that the App will be uninterrupted, error-free, or free from data loss. You use KIT at your own risk. Some jurisdictions do not allow the exclusion of certain warranties, so some of the above may not apply to you.</p>
+  </section>
+
+  <section class="body-sec" id="liability">
+    <span class="num">08</span>
+    <h2>Limitation of liability</h2>
+    <p>To the fullest extent permitted by law, Albert Software will not be liable for any indirect, incidental, special, consequential, or punitive damages, or for any loss of data, profits, or goodwill, arising out of or relating to your use of, or inability to use, KIT — including any loss of the content you store in the App.</p>
+    <p>Because KIT is a local-first app that keeps no copy of your data, you acknowledge that the loss of your device or its data is a risk you accept. Where liability cannot be excluded, it is limited to the amount you paid for the App, if any.</p>
+  </section>
+
+  <section class="body-sec" id="ip">
+    <span class="num">09</span>
+    <h2>Intellectual property</h2>
+    <p>KIT — including its name, design, and software — is owned by Albert Software and protected by applicable intellectual-property laws. These Terms do not grant you any rights in our trademarks, logo, or branding.</p>
+  </section>
+
+  <section class="body-sec" id="appstore">
+    <span class="num">10</span>
+    <h2>App Store terms</h2>
+    <p>You obtain KIT through the Apple App Store, and your use is also subject to Apple's applicable terms, including the standard Licensed Application End User License Agreement. Apple is not responsible for the App or its content and has no obligation to provide any support for it. Apple and its subsidiaries are third-party beneficiaries of these Terms and may enforce them against you.</p>
+  </section>
+
+  <section class="body-sec" id="changes">
+    <span class="num">11</span>
+    <h2>Changes to these terms</h2>
+    <p>We may update these Terms from time to time. When we do, we will change the date at the top of this page and post the updated Terms here. Since KIT has no way to message you, your continued use of the App after changes take effect means you accept the updated Terms.</p>
+  </section>
+
+  <section class="body-sec" id="law">
+    <span class="num">12</span>
+    <h2>Governing law</h2>
+    <p>These Terms are governed by the laws of the Republic of Türkiye, without regard to its conflict-of-law rules, except where the mandatory consumer-protection laws of your country of residence provide you with additional rights.</p>
+  </section>
+
+  <section class="body-sec" id="contact">
+    <span class="num">13</span>
+    <h2>Contact us</h2>
+    <p>Questions about these Terms? Reach us any time.</p>
+    <div class="contact-card">
+      <div class="who">Albert Software</div>
+      <div class="mail"><a href="mailto:info@albertsoftware.com">info@albertsoftware.com</a></div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="cr">© 2026 Albert Software · KIT</div>
+    <nav>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>

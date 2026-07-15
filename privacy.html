@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy · KIT</title>
+<meta name="description" content="KIT collects nothing. Everything you create stays on your device, encrypted. This is our privacy policy.">
+<style>
+  :root {
+    --ground: #0b0c0e;
+    --surface: #16181c;
+    --surface-2: #1e2126;
+    --ink: #ece9e2;
+    --ink-muted: #9ba0a8;
+    --ink-faint: #676c74;
+    --sage: #8fae96;
+    --sage-bright: #a7c4ad;
+    --sage-soft: rgba(143, 174, 150, 0.12);
+    --border: rgba(255, 255, 255, 0.08);
+    --border-strong: rgba(255, 255, 255, 0.14);
+    --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    background: var(--ground);
+    color: var(--ink-muted);
+    font-family: var(--sans);
+    line-height: 1.62;
+    font-size: 16.5px;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  .wrap { max-width: 680px; margin: 0 auto; padding: 0 24px; }
+
+  a { color: var(--sage); text-decoration: none; }
+  a:hover { color: var(--sage-bright); text-decoration: underline; }
+
+  /* ---- top bar ---- */
+  header.site {
+    border-bottom: 1px solid var(--border);
+    position: sticky; top: 0;
+    background: rgba(11, 12, 14, 0.82);
+    backdrop-filter: saturate(140%) blur(14px);
+    -webkit-backdrop-filter: saturate(140%) blur(14px);
+    z-index: 10;
+  }
+  header.site .wrap {
+    display: flex; align-items: center; justify-content: space-between;
+    height: 60px;
+  }
+  .brand { display: flex; align-items: center; gap: 10px; color: var(--ink); }
+  .brand .emblem { width: 26px; height: 16px; color: var(--sage); flex-shrink: 0; }
+  .brand .k { font-family: var(--serif); font-weight: 500; font-size: 22px; letter-spacing: 0.18em; }
+  nav.doc-nav { display: flex; gap: 20px; font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase; }
+  nav.doc-nav a { color: var(--ink-faint); }
+  nav.doc-nav a.active { color: var(--ink); }
+  nav.doc-nav a:hover { color: var(--sage); text-decoration: none; }
+
+  /* ---- hero ---- */
+  .hero { padding: 76px 0 8px; }
+  .eyebrow {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--sage); margin-bottom: 20px;
+  }
+  h1 {
+    font-family: var(--serif); font-weight: 500; color: var(--ink);
+    font-size: clamp(38px, 7vw, 56px); line-height: 1.05; letter-spacing: -0.01em;
+  }
+  .meta {
+    margin-top: 22px; display: flex; flex-wrap: wrap; gap: 8px 10px;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--ink-faint);
+  }
+  .meta span { border: 1px solid var(--border); border-radius: 999px; padding: 6px 12px; }
+
+  /* ---- summary callout ---- */
+  .summary {
+    margin: 44px 0 8px; padding: 28px 26px;
+    background: var(--sage-soft); border: 1px solid rgba(143,174,150,0.24);
+    border-radius: 18px;
+  }
+  .summary .lbl {
+    font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--sage-bright); margin-bottom: 12px;
+  }
+  .summary p { color: var(--ink); font-size: 17px; }
+  .summary p + p { margin-top: 12px; }
+
+  /* ---- table of contents ---- */
+  .toc { margin: 40px 0 8px; border-top: 1px solid var(--border); padding-top: 26px; }
+  .toc .lbl {
+    font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--ink-faint); margin-bottom: 16px;
+  }
+  .toc ol { list-style: none; counter-reset: toc; columns: 2; column-gap: 34px; }
+  @media (max-width: 560px) { .toc ol { columns: 1; } }
+  .toc li { counter-increment: toc; margin-bottom: 9px; break-inside: avoid; }
+  .toc a { color: var(--ink-muted); font-size: 15px; }
+  .toc a::before { content: counter(toc, decimal-leading-zero); font-family: var(--mono); font-size: 11px; color: var(--sage); margin-right: 10px; }
+  .toc a:hover { color: var(--sage); text-decoration: none; }
+
+  /* ---- sections ---- */
+  section.body-sec { padding: 46px 0 0; }
+  section.body-sec:first-of-type { padding-top: 54px; }
+  .num { font-family: var(--mono); font-size: 12px; letter-spacing: 0.1em; color: var(--sage); display: block; margin-bottom: 10px; }
+  h2 {
+    font-family: var(--serif); font-weight: 500; color: var(--ink);
+    font-size: clamp(24px, 4vw, 30px); line-height: 1.15; letter-spacing: -0.01em;
+    margin-bottom: 18px; scroll-margin-top: 80px;
+  }
+  section.body-sec p { margin-bottom: 15px; }
+  section.body-sec p strong, .ink { color: var(--ink); font-weight: 600; }
+
+  ul.clean { list-style: none; margin: 4px 0 15px; }
+  ul.clean li { position: relative; padding-left: 22px; margin-bottom: 11px; }
+  ul.clean li::before {
+    content: ""; position: absolute; left: 2px; top: 11px;
+    width: 6px; height: 6px; border-radius: 2px; background: var(--sage);
+  }
+  ul.clean li strong { color: var(--ink); font-weight: 600; }
+
+  /* ---- permissions list ---- */
+  .perms { margin: 8px 0 15px; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+  .perms .row { display: grid; grid-template-columns: 168px 1fr; gap: 20px; padding: 18px 22px; border-top: 1px solid var(--border); }
+  .perms .row:first-child { border-top: none; }
+  @media (max-width: 560px) { .perms .row { grid-template-columns: 1fr; gap: 6px; } }
+  .perms .perm { color: var(--ink); font-weight: 600; font-size: 15.5px; }
+  .perms .use { color: var(--ink-muted); font-size: 15px; }
+
+  /* ---- contact card ---- */
+  .contact-card {
+    margin: 12px 0 4px; padding: 24px 26px; border: 1px solid var(--border-strong);
+    border-radius: 18px; background: var(--surface);
+  }
+  .contact-card .who { color: var(--ink); font-weight: 600; font-size: 16px; }
+  .contact-card .mail { margin-top: 4px; font-size: 17px; }
+
+  /* ---- footer ---- */
+  footer.site { margin-top: 80px; border-top: 1px solid var(--border); padding: 40px 0 72px; }
+  footer.site .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; }
+  footer.site .cr { font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; color: var(--ink-faint); text-transform: uppercase; }
+  footer.site nav { display: flex; gap: 20px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; }
+  footer.site nav a { color: var(--ink-faint); }
+  footer.site nav a:hover { color: var(--sage); text-decoration: none; }
+
+  /* ---- print: switch to clean light for saving as PDF ---- */
+  @media print {
+    header.site, footer.site nav, .toc { display: none; }
+    body { background: #fff; color: #222; }
+    h1, h2, .brand .k, .summary p, section.body-sec p strong, .perms .perm, .contact-card .who { color: #111; }
+    .summary { background: #f4f7f4; border-color: #cddccf; }
+    .perms, .contact-card { border-color: #ddd; }
+    a { color: #2f6f4f; }
+    .num, .eyebrow, .summary .lbl { color: #4b7a58; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <div class="brand">
+      <svg class="emblem" viewBox="0 0 40 24" aria-hidden="true">
+        <path d="M20 12 C20 3.5 32 3.5 32 12 C32 20.5 20 20.5 20 12 C20 3.5 8 3.5 8 12 C8 20.5 20 20.5 20 12 Z"
+              fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+      </svg>
+      <span class="k">KIT</span>
+    </div>
+    <nav class="doc-nav">
+      <a href="privacy.html" class="active">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="hero">
+    <p class="eyebrow">KIT · Privacy</p>
+    <h1>Privacy Policy</h1>
+    <div class="meta">
+      <span>Effective July 15, 2026</span>
+      <span>Version 1.0</span>
+    </div>
+  </div>
+
+  <div class="summary">
+    <p class="lbl">The short version</p>
+    <p>KIT collects nothing. There is no account to create, no server to sign in to, and nothing watching what you do.</p>
+    <p>Everything you put into KIT — the people you remember, your notes, reminders, voice memos, photos and links — is stored only on your device, inside an encrypted database that is locked to your phone. We never see it, never receive it, and could not access it even if we wanted to.</p>
+  </div>
+
+  <nav class="toc" aria-label="Contents">
+    <p class="lbl">Contents</p>
+    <ol>
+      <li><a href="#who">Who we are</a></li>
+      <li><a href="#collect">Information we collect</a></li>
+      <li><a href="#where">Where your data lives</a></li>
+      <li><a href="#permissions">Permissions we ask for</a></li>
+      <li><a href="#ads">No ads, no profiling</a></li>
+      <li><a href="#backups">Backups &amp; exports</a></li>
+      <li><a href="#retention">Keeping &amp; deleting data</a></li>
+      <li><a href="#children">Children's privacy</a></li>
+      <li><a href="#changes">Changes to this policy</a></li>
+      <li><a href="#contact">Contact us</a></li>
+    </ol>
+  </nav>
+
+  <section class="body-sec" id="who">
+    <span class="num">01</span>
+    <h2>Who we are</h2>
+    <p>KIT is a private, local-first people-memory notebook, published by <strong>Albert Software</strong> (“we”, “us”, “our”). This policy explains what happens to your information when you use the KIT app (“KIT”, “the App”).</p>
+    <p>Because of how KIT is built, this is one of the shortest privacy policies you will ever read — there is very little to explain, because there is very little that happens.</p>
+  </section>
+
+  <section class="body-sec" id="collect">
+    <span class="num">02</span>
+    <h2>Information we collect: none</h2>
+    <p>KIT does not collect, transmit, store on our systems, or share any personal information. In plain terms:</p>
+    <ul class="clean">
+      <li><strong>No account.</strong> KIT has no sign-up, no login, no email, no password. We never ask who you are.</li>
+      <li><strong>No servers.</strong> KIT has no backend. Your content is never uploaded anywhere, and there is no cloud to sync to.</li>
+      <li><strong>No analytics or tracking.</strong> KIT contains no analytics tools, no crash reporting, no advertising identifiers, no cookies, no fingerprinting, and no telemetry of any kind.</li>
+      <li><strong>No third-party SDKs.</strong> KIT does not embed Firebase, Google, Facebook, or any other third-party service that could collect data about you.</li>
+      <li><strong>Nothing to sell or share.</strong> We have no data to sell, rent, or share, because your data never reaches us in the first place.</li>
+    </ul>
+  </section>
+
+  <section class="body-sec" id="where">
+    <span class="num">03</span>
+    <h2>Where your data lives</h2>
+    <p>Everything you create in KIT lives in a single encrypted database on your device.</p>
+    <ul class="clean">
+      <li><strong>Encrypted at rest.</strong> KIT stores your data using SQLCipher, which encrypts the entire database with AES-256. Without the key, the file is unreadable — including to us.</li>
+      <li><strong>The key stays on your device.</strong> The encryption key is generated on your device and kept in the iOS Keychain — the same secure storage iOS uses for passwords. It never leaves your phone and is never sent to us or anyone else.</li>
+      <li><strong>Locked behind Face&nbsp;ID or a passcode.</strong> You can require Face&nbsp;ID, your device passcode, or a separate KIT passcode to open the App.</li>
+    </ul>
+    <p>Attachments such as photos and voice notes are kept inside the same protected app storage on your device.</p>
+  </section>
+
+  <section class="body-sec" id="permissions">
+    <span class="num">04</span>
+    <h2>Permissions we ask for</h2>
+    <p>KIT asks for a few device permissions only so specific features can work. Each is used locally, and nothing they capture ever leaves your device.</p>
+    <div class="perms">
+      <div class="row">
+        <div class="perm">Face ID / Biometrics</div>
+        <div class="use">To unlock the App. Biometric data is handled entirely by iOS; KIT only ever receives a yes-or-no result and never sees your face or fingerprint data.</div>
+      </div>
+      <div class="row">
+        <div class="perm">Microphone</div>
+        <div class="use">To record voice notes, which are saved only on your device.</div>
+      </div>
+      <div class="row">
+        <div class="perm">Speech Recognition</div>
+        <div class="use">To turn voice notes into text on your device. The audio is processed on-device and is never sent to Apple's servers or ours.</div>
+      </div>
+      <div class="row">
+        <div class="perm">Photos</div>
+        <div class="use">So you can attach a photo to a memory. KIT only accesses the specific photos you choose and stores them in its encrypted storage on your device.</div>
+      </div>
+    </div>
+    <p>You can review or revoke any of these permissions at any time in your device Settings.</p>
+  </section>
+
+  <section class="body-sec" id="ads">
+    <span class="num">05</span>
+    <h2>No ads, no profiling, no AI training</h2>
+    <p>KIT shows no ads and builds no profile of you. There is no recommendation engine, no automated decision-making, and your content is never used to train any AI model. Your memories are yours alone.</p>
+  </section>
+
+  <section class="body-sec" id="backups">
+    <span class="num">06</span>
+    <h2>Backups and exports</h2>
+    <p>KIT never backs up your data for you. If you create your own backup or export of your KIT data, it is placed wherever you choose — and it stays under your control. KIT does not upload it anywhere.</p>
+    <p>If you use Apple's device backup (iCloud Backup or an encrypted computer backup), your KIT data may be included as part of that whole-device backup. That backup is created and encrypted by Apple under your Apple Account, not by us, and is governed by <a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple's privacy policy</a>.</p>
+    <p>Because we hold no copy of your data, <strong>you are responsible for keeping your own backups.</strong> If you lose your device or delete the App without a backup, your data cannot be recovered by us or anyone else.</p>
+  </section>
+
+  <section class="body-sec" id="retention">
+    <span class="num">07</span>
+    <h2>Keeping and deleting your data</h2>
+    <p>You are in complete control of your data at all times.</p>
+    <ul class="clean">
+      <li><strong>Delete individual items</strong> — people, notes, reminders, photos — from within the App whenever you like.</li>
+      <li><strong>Delete everything</strong> using the in-app “Delete all data” option, which erases the encrypted database.</li>
+      <li><strong>Delete the App</strong> to remove all of its data from your device.</li>
+    </ul>
+    <p>Once deleted from your device, the data is gone. There is no copy on any server for us to hold, restore, or be compelled to produce.</p>
+  </section>
+
+  <section class="body-sec" id="children">
+    <span class="num">08</span>
+    <h2>Children's privacy</h2>
+    <p>KIT is a personal notebook that is not directed at children. Because KIT collects no information at all, it does not knowingly collect personal information from anyone, including children.</p>
+  </section>
+
+  <section class="body-sec" id="changes">
+    <span class="num">09</span>
+    <h2>Changes to this policy</h2>
+    <p>If we ever change this policy, we will update the date at the top of this page and post the new version here. Since KIT has no way to message you, please check back here for any updates. Meaningful changes will be reflected in a new version number.</p>
+  </section>
+
+  <section class="body-sec" id="contact">
+    <span class="num">10</span>
+    <h2>Contact us</h2>
+    <p>Questions about your privacy in KIT? We're happy to help.</p>
+    <div class="contact-card">
+      <div class="who">Albert Software</div>
+      <div class="mail"><a href="mailto:info@albertsoftware.com">info@albertsoftware.com</a></div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="cr">© 2026 Albert Software · KIT</div>
+    <nav>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
